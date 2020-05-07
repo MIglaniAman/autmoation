@@ -1,0 +1,24 @@
+step1: first intialize the git folder 
+	c:git init 
+step2: add author name and email who is editing 
+	c: git config --global user.email "emailid"
+	c:git config --global user.name "name"
+step3: add remote url 
+	git remote add origin https://github.com/MIglaniAman/automation.git
+step4: syn with remote url 
+	c:git push -u origin master
+step5: create a post-commit file / a concept of hooks which will automatically do git push after commit a file
+  c: cd .git/hooks
+  c: notepad post-commit
+	!#/bin/bash 
+	git push
+step6: mov the post-commit.txt file to post-commit
+	C: mv post-commit.txt post-commit
+step7: add to satging area 
+	c:git add [filename]
+step8: add to commit area
+	c:git commit [filename] -m "commentanything"
+step9: create  a new branch 
+	c: git checkout -b [brnchname]
+step10 :again push to remote url and sync that
+	c: push -u origin [brnchname]
