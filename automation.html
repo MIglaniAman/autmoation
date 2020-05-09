@@ -49,16 +49,55 @@
 	<p>c: push -u origin [branchname] </p></p>
 
 
-<h> >>>>>>> now we are using JENKINS>>>>>></h>
-<p> step13: creating job1 :which will check dev1 branch and also it will be tested in docker os </p>
+<h2> >>>>>>> now we are using JENKINS>>>>>></h2>
 
+<h3> key point is : trigeer job3 after  [step13] job , triger job[step 15] after [step16] job3,trigeer job[step14] after  [step15] job
 
-<p> step14: creating job2 :which will check master branch and also have production os 
+<p> step13: creating job{github_dev_upload_plus_deploy_testing_os} :which will check dev1 branch and also it will be tested in docker os </p>
+<p> to do so we have to got jenkins portal and there we configure the job </p>
+<p>    jenkins portal > create a free style job > then go to source code mangemnet and click on git > give the url of repo and branch name 
+<p> now to make it check for evry min go to or we can say trigger it to pull the data go to Build trigger > and there put according to your requirement 
+<p>now the data it will clone in its own repo e.i jenkins repo so now go build option and in that go to execute shell if you want to run shell command of redhat </p>
+<p>C: cp * /[fldername]  :it will copy all the data from jenkin repo to this folder</p>
+<p> 
+c:	if sudo docker ps |grep automation
+  	then "docker is runnuin already"
+  	else 
+  	sudo docker run -dit -p 8085:80 -v /[foldername]:/usr/locla/appache2/htdocs         --name automation httpd 
+  	fi 
 </p>
+<p>what this above command will do it run th docker os in background in which httpd is cofigures and it will patting plus link the folder with the folder apche folder [for more info learn more about apche], if the os is not launch only that </p>
+<p>go to "build trigger" : click build after project and specify the job after you want to run this job </p> 
 
 
-<p> step15: creating job3 :which will merge newb branch to aster merge after see manuall that job1 is perfect
- </p>
+
+
+
+<p> step14: creating job{guthub_master_upload_plus_deploy production} :which will check master branch and also have production os 
+</p>similiarly do this job also 
+but only chng is instead dev branch put master branch name 
+<p>go to "build trigger" : click build after project and specify the job after you want to run this job </p> 
+
+
+
+<p> step15: creating job{merge_Dev_master} :which will merge dev branch to master merge  after job 3 </p>
+<p>    for doing this we have to do configure job   </p>
+<p> configure   >>> "SOURCE CODE MANGEMENT " >>> click on git >write url +plus specifu branch which you will merge in master >>> click additinalbehavior - give repo name + nme of the branch to merge in  >>> "post build actions"  >>> click on pus if succed >>>> clicl tag you want to give  >>> clicl on braches  give branch and 	remot name </p>
+<p>go to "build trigger" : click build after project and specify the job after you want to run this job </p> 
+
+
+
+<p> Step16: create  a new job go "build" opton > execute shell </p> 
+<p> status=$(curl -o /dev/null -s -w "%{http_code}"  <url> ) </p> 
+<p> if [[status == 200]] </p> 
+<p> then </p> 
+<p> 	exit 0 </p> 
+<p> else </p> 
+<p> 	exit 1 </p>  
+
+<p>go to "build trigger" : click build after project and specify the job after you want to run this job </p> 
+
+
 </body>
 </html>
-new1
+
