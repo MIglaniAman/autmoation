@@ -5,44 +5,58 @@
 <body>
 <h1> Now we are starting with autmationworld</h1>
 
-<p> step1: first intialize the git folder 
-	c:git init </p>
-<p> step2: add author name and email who is editing 
-	c: git config --global user.email "emailid"
-	c:git config --global user.name "name" 
-</p>
-<p> step3: add remote url 
-	git remote add origin https://github.com/MIglaniAman/automation.git
-</p>
-<p> step4: syn with remote url 
-	c:git push -u origin master 
-</p>
-<p> step5: create a post-commit file  a concept of hooks which will automatically do git push after commit a file 
-  c: cd .git/hooks
-  c: notepad post-commit
-	!#/bin/bash 
-	git push 
-</p>
-<p> step6: mov the post-commit.txt file to post-commit
-	C: mv post-commit.txt post-commit 
-</p>
-<p> step7: add to satging area 
-	c:git add [filename]
-</p>
-<p> step8: add to commit area
-	c:git commit [filename] -m "commentanything" 
-</p>
-<p> step9: create  a new branch 
-	c: git checkout -b [brnchname] 
-</p>
-<p> step10 :again push to remote url and sync that
-	c: push -u origin [branchname] 
-</p>
+<p> step1: first intialize the git folder</p> 
+	<p>c:git init </p>
+
+
+<p> step2: add author name and email who is editing </p>
+	<p>c: git config --global user.email "emailid"</p>
+	<p>c:git config --global user.name "name" </p>
+
+
+<p> step3: add remote url </p>
+	<p>git remote add origin https://github.com/MIglaniAman/automation.git</p>
+
+
+<p> step4: syn with remote url</p> 
+	<p>c:git push -u origin master</p> 
+
+
+<p> step5: create a post-commit file  a concept of hooks which will automatically do git push after commit a file </p> 
+  <p>c: cd .git/hooks</p> 
+  <p>c: notepad post-commit</p> 
+	<p>!#/bin/bash </p> 
+	<p>git push </p> 
+
+
+<p> step6: mov the post-commit.txt file to post-commit</p> 
+	<p>C: mv post-commit.txt post-commit </p> 
+
+
+<p> step7: add to satging area </p>
+	<p>c:git add [filename]</p>
+
+
+<p> step8: add to commit area</p>
+	c:git commit [filename] -m "commentanything"</p> 
+
+
+<p> step9: create  a new branch </p>
+	<p>c: git checkout -b [brnchname] </p>
+
+
+<p> step10 :again push to remote url and sync that</p>
+	<p>c: push -u origin [branchname] </p></p>
+
+
 <h> >>>>>>> now we are using JENKINS>>>>>></h>
-<p> step13: creating job1 :which will check dev1 branch and also it will be tested in docker os 
-</p>
+<p> step13: creating job1 :which will check dev1 branch and also it will be tested in docker os </p>
+
+
 <p> step14: creating job2 :which will check master branch and also have production os 
 </p>
+
+
 <p> step15: creating job3 :which will merge newb branch to aster merge after see manuall that job1 is perfect
  </p>
 </body>
